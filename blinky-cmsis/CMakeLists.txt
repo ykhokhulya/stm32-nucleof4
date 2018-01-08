@@ -15,10 +15,10 @@ include_directories(
 file(GLOB_RECURSE PROJECT_SOURCES *.c)
 
 add_executable(
-    ${CMAKE_PROJECT_NAME}
+    ${PROJECT_NAME}
     ${PROJECT_SOURCES}
     ${CMSIS_SOURCES})
 
-stm32_set_target_properties(${CMAKE_PROJECT_NAME})
-stm32_add_hex_bin_targets(${CMAKE_PROJECT_NAME})
-stm32_print_size_of_targets(${CMAKE_PROJECT_NAME})
+stm32_set_target_properties(${PROJECT_NAME})
+stm32_add_hex_bin_targets(${PROJECT_NAME})
+stm32_print_size_of_targets(${PROJECT_NAME})
