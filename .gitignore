@@ -1,1 +1,6 @@
 build/
+
+*.elf
+*.bin
+*.hex
+CMakeLists.txt.user
