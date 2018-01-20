@@ -4,7 +4,7 @@ project(04-lcd_display)
 enable_language(ASM)
 
 find_package(CMSIS REQUIRED)
-find_package(STM32HAL COMPONENTS gpio uart REQUIRED)
+find_package(STM32HAL COMPONENTS gpio uart rtc REQUIRED)
 
 file(GLOB_RECURSE PROJECT_SOURCES *.c)
 

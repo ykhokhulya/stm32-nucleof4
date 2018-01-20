@@ -80,13 +80,13 @@ void HD44780_home(LCD_IOTypeDef* io)
     HD44780_IO_delay(1600);
 }
 
-void HD44780_cursor(LCD_IOTypeDef* io, int16_t cols, int16_t rows)
+void HD44780_cursor(LCD_IOTypeDef* io, int16_t rows, int16_t cols)
 {
     assert_param(cols >= 0 && cols < HD44780_COLS);
     assert_param(rows >= 0 && rows < HD44780_ROWS);
 
     uint8_t addr;
-    switch (cols)
+    switch (rows)
     {
     case 0:
         addr = 0x80;
@@ -95,7 +95,7 @@ void HD44780_cursor(LCD_IOTypeDef* io, int16_t cols, int16_t rows)
         addr = 0xC0;
         break;
     }
-    HD44780_IO_command(io, addr, 0);
+    HD44780_IO_command(io, addr + cols, 0);
     HD44780_IO_delay(50);
 }
 

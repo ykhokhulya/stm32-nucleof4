@@ -130,3 +130,41 @@ void LCD_MspDeInit(LCD_HandleTypeDef* lcd)
         __HAL_RCC_GPIOH_CLK_DISABLE();
     }
 }
+
+void HAL_RTC_MspInit(RTC_HandleTypeDef* hrtc)
+{
+    if (hrtc->Instance == RTC)
+    {
+        RCC_OscInitTypeDef osc_init = {};
+        osc_init.OscillatorType = RCC_OSCILLATORTYPE_LSE;
+        osc_init.PLL.PLLState = RCC_PLL_NONE;
+        osc_init.LSEState = RCC_LSE_ON;
+
+        if (HAL_RCC_OscConfig(&osc_init) != HAL_OK)
+        {
+            while (1) __NOP();
+        }
+
+        RCC_PeriphCLKInitTypeDef clk_init = {};
+        clk_init.PeriphClockSelection = RCC_PERIPHCLK_RTC;
+        clk_init.RTCClockSelection = RCC_RTCCLKSOURCE_LSE;
+
+        if (HAL_RCCEx_PeriphCLKConfig(&clk_init) != HAL_OK)
+        {
+            while (1) __NOP();
+        }
+
+        HAL_NVIC_EnableIRQ(RTC_Alarm_IRQn);
+
+        __HAL_RCC_RTC_ENABLE();
+    }
+}
+
+void HAL_RTC_MspDeInit(RTC_HandleTypeDef* hrtc)
+{
+    if (hrtc->Instance == RTC)
+    {
+        __HAL_RCC_RTC_DISABLE();
+        __HAL_RCC_PWR_CLK_DISABLE();
+    }
+}

@@ -24,7 +24,14 @@
 
 #include <stm32f4xx_hal.h>
 
+extern RTC_HandleTypeDef g_rtc_handle;
+
 void SysTick_Handler()
 {
     HAL_IncTick();
+}
+
+void RTC_Alarm_IRQHandler()
+{
+    HAL_RTC_AlarmIRQHandler(&g_rtc_handle);
 }
