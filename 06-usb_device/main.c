@@ -48,11 +48,11 @@ int main()
     // initUart();
     initUsbd();
 
-    //printf("System Clock Frequency = %lu Hz\n", SystemCoreClock);
-    //printf("Device identifier = %lu\n", HAL_GetDEVID());
+    // printf("System Clock Frequency = %lu Hz\n", SystemCoreClock);
+    // printf("Device identifier = %lu\n", HAL_GetDEVID());
 
-//    const size_t HID_BufferSize = 4;
-//    uint8_t HID_Buffer[HID_BufferSize];
+    //    const size_t HID_BufferSize = 4;
+    //    uint8_t HID_Buffer[HID_BufferSize];
 
     while (1)
     {
@@ -78,11 +78,11 @@ int main()
             // GetPointerData(HID_Buffer);
 
             /* send data though IN endpoint*/
-//            if ((HID_Buffer[1] != 0) || (HID_Buffer[2] != 0))
-//            {
-//                USBD_CUSTOM_HID_SendReport(
-//                    &g_usbd_handle, HID_Buffer, HID_BufferSize);
-//            }
+            //            if ((HID_Buffer[1] != 0) || (HID_Buffer[2] != 0))
+            //            {
+            //                USBD_CUSTOM_HID_SendReport(
+            //                    &g_usbd_handle, HID_Buffer, HID_BufferSize);
+            //            }
             //          counter =0;
         }
     }

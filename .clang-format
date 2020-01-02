@@ -37,7 +37,7 @@ BraceWrapping:
   IndentBraces:    false
 AlignAfterOpenBracket: AlwaysBreak
 
-IncludeBlock: Preserve
+IncludeBlocks: Preserve
 IncludeCategories:
   - Regex:           '^<.*'
     Priority:        1
