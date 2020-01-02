@@ -195,7 +195,7 @@ static void Demo(void)
      * -------------------------------------*/
     while (BSP_PB_GetState(BUTTON_USER) != KEY_PRESSED)
     {
-        /* Toggle LED4 */ / #define / BSP_LED_Toggle(LED4);
+        /* Toggle LED4 */
         HAL_Delay(20);
         /* Toggle LED3 */
         BSP_LED_Toggle(LED3);
