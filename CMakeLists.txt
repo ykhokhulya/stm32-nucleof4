@@ -21,5 +21,6 @@ elseif(${STM32_CHIP} STREQUAL STM32F303VCT6)
 
     # samples
     add_subdirectory(06-usb_device)
+    add_subdirectory(07-discovery_board_f3)
 
 endif()
