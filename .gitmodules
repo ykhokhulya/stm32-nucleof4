@@ -1,6 +1,6 @@
-[submodule "stm32-cmake"]
-	path = stm32-cmake
-	url = https://github.com/ObKo/stm32-cmake.git
 [submodule "stm32-fw-cube"]
 	path = stm32-fw-cube
 	url = https://github.com/ykhokhulya/stm32-fw-cube.git
+[submodule "stm32-cmake"]
+	path = stm32-cmake
+	url = https://github.com/ykhokhulya/stm32-cmake.git
